@@ -1,0 +1,22 @@
+{
+  "name": "typescript-ecommerce-core",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Strictly typed clothing and footwear catalog and order core",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "demo": "tsx src/index.ts --demo",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.19.0",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}
