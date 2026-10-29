@@ -1,0 +1,39 @@
+{
+  "name": "nestjs-modular-architecture",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Modular NestJS clothes and orders API with custom providers and request scope",
+  "scripts": {
+    "build": "nest build",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "start:prod": "node dist/main.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint --deny-warnings src test",
+    "format": "prettier --write src test *.json",
+    "test": "tsc -p tsconfig.test.json && node --test .test-build/test/*.spec.js"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "dependencies": {
+    "@nestjs/common": "^12.3.2",
+    "@nestjs/core": "^12.3.2",
+    "@nestjs/mapped-types": "^12.0.0",
+    "@nestjs/platform-express": "^12.3.2",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.15.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "11.0.24",
+    "@nestjs/schematics": "^11.0.9",
+    "@types/express": "^5.0.0",
+    "@types/node": "^24.0.0",
+    "oxlint": "^1.58.0",
+    "prettier": "^3.4.2",
+    "typescript": "~5.9.3"
+  }
+}

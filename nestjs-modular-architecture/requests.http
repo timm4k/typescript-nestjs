@@ -1,0 +1,90 @@
+@baseUrl = http://localhost:3000
+
+###
+GET {{baseUrl}}/clothes
+
+###
+# @name createClothing
+POST {{baseUrl}}/clothes
+Content-Type: application/json
+
+{
+  "title": "Sweat Wide Pants",
+  "price": 2100,
+  "size": "XS",
+  "material": "Cotton blend",
+  "color": "Gray"
+}
+
+###
+GET {{baseUrl}}/clothes/{{createClothing.response.body.$.id}}
+
+###
+POST {{baseUrl}}/orders
+Content-Type: application/json
+
+{
+  "productId": "{{createClothing.response.body.$.id}}",
+  "quantity": 2,
+  "customerEmail": "customer@example.com"
+}
+
+###
+POST {{baseUrl}}/orders
+Content-Type: application/json
+
+{
+  "productId": "missing",
+  "quantity": 2
+}
+
+###
+GET {{baseUrl}}/orders
+
+###
+GET {{baseUrl}}/diagnostics/request-scope
+
+###
+GET {{baseUrl}}/diagnostics/request-scope
+
+###
+PATCH {{baseUrl}}/clothes/{{createClothing.response.body.$.id}}
+Content-Type: application/json
+
+{
+  "title": "Gray Wide Pants",
+  "price": 2000
+}
+
+###
+POST {{baseUrl}}/orders
+Content-Type: application/json
+
+{
+  "productId": "{{createClothing.response.body.$.id}}",
+  "quantity": 2
+}
+
+###
+GET {{baseUrl}}/orders
+
+###
+POST {{baseUrl}}/orders
+Content-Type: application/json
+
+{
+  "productId": "clothing-1",
+  "quantity": 0
+}
+
+###
+DELETE {{baseUrl}}/clothes/{{createClothing.response.body.$.id}}
+
+###
+POST {{baseUrl}}/orders
+Content-Type: application/json
+
+{
+  "productId": "{{createClothing.response.body.$.id}}",
+  "quantity": 1
+}
