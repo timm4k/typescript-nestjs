@@ -1,0 +1,87 @@
+@baseUrl = http://localhost:3000
+
+###
+# @name createClothing
+POST {{baseUrl}}/clothes
+Content-Type: application/json
+
+{
+  "title": "  Cotton T-Shirt  ",
+  "price": 850,
+  "size": "M",
+  "material": "  Cotton  ",
+  "color": "  Lavender  "
+}
+
+###
+POST {{baseUrl}}/clothes
+Content-Type: application/json
+
+{
+  "title": "Cotton T-Shirt",
+  "price": 850,
+  "size": "M",
+  "material": "Cotton",
+  "color": "Lavender",
+  "hackerField": "malicious"
+}
+
+###
+POST {{baseUrl}}/clothes
+Content-Type: application/json
+
+{
+  "title": "Cotton T-Shirt",
+  "price": "850",
+  "size": "M",
+  "material": "Cotton",
+  "color": "Lavender"
+}
+
+###
+POST {{baseUrl}}/clothes
+Content-Type: application/json
+
+{
+  "title": "Cotton T-Shirt",
+  "price": -1,
+  "size": "M",
+  "material": "Cotton",
+  "color": "Lavender"
+}
+
+###
+GET {{baseUrl}}/clothes?limit=5
+
+###
+GET {{baseUrl}}/clothes?limit=1
+
+###
+GET {{baseUrl}}/clothes?limit=invalid
+
+###
+POST {{baseUrl}}/clothes
+Content-Type: application/json
+
+{
+  "title": "  ",
+  "price": 850,
+  "size": "XXL",
+  "material": "  ",
+  "color": "Lavender"
+}
+
+###
+GET {{baseUrl}}/clothes/missing
+
+###
+PATCH {{baseUrl}}/clothes/{{createClothing.response.body.$.id}}
+Content-Type: application/json
+
+{
+  "price": 790,
+  "color": "  Black  "
+}
+
+###
+DELETE {{baseUrl}}/clothes/{{createClothing.response.body.$.id}}
