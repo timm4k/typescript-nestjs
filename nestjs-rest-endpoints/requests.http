@@ -1,0 +1,73 @@
+@baseUrl = http://localhost:3000
+
+### Application information
+GET {{baseUrl}}/
+
+### List clothes and inspect custom response headers
+GET {{baseUrl}}/clothes
+
+### Case-insensitive search
+GET {{baseUrl}}/clothes?search=SWEAT
+
+### Limit filtered results
+GET {{baseUrl}}/clothes?search=sweat&limit=1
+
+### Find seeded item
+GET {{baseUrl}}/clothes/1
+
+### Missing item returns 404
+GET {{baseUrl}}/clothes/99999
+
+### Create an item before running the following requests
+# @name createClothing
+POST {{baseUrl}}/clothes
+Content-Type: application/json
+
+{
+  "title": "Cotton T-Shirt",
+  "price": 850,
+  "size": "M",
+  "material": "Cotton",
+  "color": "Lavender"
+}
+
+### Read created item
+GET {{baseUrl}}/clothes/{{createClothing.response.body.$.id}}
+
+### Partially update the created item
+PATCH {{baseUrl}}/clothes/{{createClothing.response.body.$.id}}
+Content-Type: application/json
+
+{
+  "price": 790,
+  "color": "Black"
+}
+
+### Delete created item and verify 204 with an empty body
+DELETE {{baseUrl}}/clothes/{{createClothing.response.body.$.id}}
+
+### Deleted item returns 404
+GET {{baseUrl}}/clothes/{{createClothing.response.body.$.id}}
+
+### Invalid price returns 400
+POST {{baseUrl}}/clothes
+Content-Type: application/json
+
+{
+  "title": "Cotton T-Shirt",
+  "price": -1,
+  "size": "M",
+  "material": "Cotton",
+  "color": "Lavender"
+}
+
+### Invalid limit returns 400
+GET {{baseUrl}}/clothes?limit=0
+
+### Replacing the primary key is rejected
+PATCH {{baseUrl}}/clothes/1
+Content-Type: application/json
+
+{
+  "id": "replacement"
+}
