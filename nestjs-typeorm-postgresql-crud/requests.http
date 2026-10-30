@@ -1,0 +1,125 @@
+@baseUrl = http://localhost:3000
+
+###
+# @name createClothing
+POST {{baseUrl}}/clothes
+Content-Type: application/json
+
+{
+  "title": "Sweat Oversized Pullover Hoodie",
+  "price": 1800,
+  "size": "M",
+  "material": "Cotton blend",
+  "color": "Gray"
+}
+
+###
+POST {{baseUrl}}/clothes
+Content-Type: application/json
+
+{
+  "title": "AIRism Cotton Oversized T-Shirt",
+  "price": 950,
+  "size": "S",
+  "material": "Cotton blend",
+  "color": "White"
+}
+
+###
+POST {{baseUrl}}/clothes
+Content-Type: application/json
+
+{
+  "title": "Sweat Wide Pants",
+  "price": 2100,
+  "size": "XS",
+  "material": "Cotton blend",
+  "color": "Gray"
+}
+
+###
+POST {{baseUrl}}/clothes
+Content-Type: application/json
+
+{
+  "title": "Cotton Oxford Shirt",
+  "price": 1500,
+  "size": "L",
+  "material": "Cotton",
+  "color": "Blue"
+}
+
+###
+POST {{baseUrl}}/clothes
+Content-Type: application/json
+
+{
+  "title": "Linen Blend Dress",
+  "price": 2400,
+  "size": "M",
+  "material": "Linen blend",
+  "color": "Beige"
+}
+
+###
+POST {{baseUrl}}/clothes
+Content-Type: application/json
+
+{
+  "title": "Denim Trucker Jacket",
+  "price": 3200,
+  "size": "XL",
+  "material": "Denim",
+  "color": "Blue"
+}
+
+###
+POST {{baseUrl}}/clothes
+Content-Type: application/json
+
+{
+  "title": "Ribbed Knit Cardigan",
+  "price": 1900,
+  "size": "S",
+  "material": "Cotton knit",
+  "color": "Lavender"
+}
+
+###
+GET {{baseUrl}}/clothes?page=1&limit=3
+
+###
+GET {{baseUrl}}/clothes?page=2&limit=3
+
+###
+GET {{baseUrl}}/clothes?search=SWEAT&sortBy=price&order=ASC
+
+###
+GET {{baseUrl}}/clothes/{{createClothing.response.body.$.id}}
+
+###
+PATCH {{baseUrl}}/clothes/{{createClothing.response.body.$.id}}
+Content-Type: application/json
+
+{
+  "price": 1650,
+  "color": "Black"
+}
+
+###
+DELETE {{baseUrl}}/clothes/{{createClothing.response.body.$.id}}
+
+###
+GET {{baseUrl}}/clothes?page=1&limit=10
+
+###
+GET {{baseUrl}}/clothes/{{createClothing.response.body.$.id}}
+
+###
+PATCH {{baseUrl}}/clothes/{{createClothing.response.body.$.id}}/restore
+
+###
+GET {{baseUrl}}/clothes?page=1&limit=10
+
+###
+GET {{baseUrl}}/clothes?page=0&limit=3
