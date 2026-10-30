@@ -1,0 +1,125 @@
+@baseUrl = http://localhost:3001
+
+### Create a seasonal collection
+# @name createCollection
+POST {{baseUrl}}/collections
+Content-Type: application/json
+
+{
+  "name": "Autumn Winter 2026"
+}
+
+### Create clothing with shared materials and care instructions
+# @name createClothing
+POST {{baseUrl}}/clothes
+Content-Type: application/json
+
+{
+  "title": "Sweat Oversized Pullover Hoodie",
+  "price": 1800,
+  "size": "M",
+  "color": "Gray",
+  "collectionId": "{{createCollection.response.body.$.id}}",
+  "materials": ["Cotton", "Polyester"],
+  "careInstruction": {
+    "washingTemperature": 30,
+    "dryCleanOnly": false,
+    "instructions": "Wash inside out and air dry"
+  }
+}
+
+### Reuse an existing material
+POST {{baseUrl}}/clothes
+Content-Type: application/json
+
+{
+  "title": "AIRism Cotton Oversized T-Shirt",
+  "price": 950,
+  "size": "S",
+  "color": "White",
+  "collectionId": "{{createCollection.response.body.$.id}}",
+  "materials": ["Cotton"],
+  "careInstruction": {
+    "washingTemperature": 40,
+    "dryCleanOnly": false,
+    "instructions": "Machine wash with similar colors"
+  }
+}
+
+### Load related data through repository relations
+GET {{baseUrl}}/clothes/{{createClothing.response.body.$.id}}
+
+### Load the complete aggregate through QueryBuilder
+GET {{baseUrl}}/clothes/{{createClothing.response.body.$.id}}/aggregate
+
+### Filter by material name without losing other materials
+GET {{baseUrl}}/clothes?material=COTTON
+
+### Filter by material identifier
+GET {{baseUrl}}/clothes?materialId={{createClothing.response.body.$.materials[0].id}}
+
+### Combine collection and material filters
+GET {{baseUrl}}/clothes?collectionId={{createCollection.response.body.$.id}}&material=Polyester
+
+### Paginate matching root entities
+GET {{baseUrl}}/clothes?material=Cotton&page=1&limit=1
+
+### Next page
+GET {{baseUrl}}/clothes?material=Cotton&page=2&limit=1
+
+### Count and inspect clothes before rollback
+GET {{baseUrl}}/clothes?limit=100
+
+### Inspect the shared material catalog before rollback
+GET {{baseUrl}}/materials
+
+### Trigger a real failure after partial writes inside the transaction
+POST {{baseUrl}}/clothes/transactional
+Content-Type: application/json
+
+{
+  "title": "Rollback Sample",
+  "price": 1200,
+  "size": "M",
+  "color": "Black",
+  "collectionId": "{{createCollection.response.body.$.id}}",
+  "materials": ["Rollback Fabric"],
+  "careInstruction": {
+    "washingTemperature": 20,
+    "dryCleanOnly": false,
+    "instructions": "Hand wash"
+  },
+  "simulateFailure": true
+}
+
+### No failed clothing should remain
+GET {{baseUrl}}/clothes?search=Rollback%20Sample
+
+### No failed material should remain
+GET {{baseUrl}}/materials
+
+### Atomically update clothing, materials and care
+PATCH {{baseUrl}}/clothes/{{createClothing.response.body.$.id}}
+Content-Type: application/json
+
+{
+  "price": 1650,
+  "materials": ["Cotton", "Linen"],
+  "careInstruction": {
+    "washingTemperature": 20,
+    "dryCleanOnly": false,
+    "instructions": "Hand wash and air dry"
+  }
+}
+
+### Delete clothing and its dependent rows
+DELETE {{baseUrl}}/clothes/{{createClothing.response.body.$.id}}
+
+### Shared materials must remain available
+GET {{baseUrl}}/materials
+
+### Delete the collection and its remaining clothing
+DELETE {{baseUrl}}/collections/{{createCollection.response.body.$.id}}
+
+### Confirm the collection has no remaining clothing
+GET {{baseUrl}}/clothes?collectionId={{createCollection.response.body.$.id}}

@@ -1,0 +1,47 @@
+{
+  "name": "nestjs-typeorm-relations-migrations",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Clothing relations, versioned PostgreSQL migrations and atomic transactions",
+  "scripts": {
+    "build": "nest build",
+    "start": "node --env-file=.env node_modules/@nestjs/cli/bin/nest.js start",
+    "start:dev": "node --env-file=.env node_modules/@nestjs/cli/bin/nest.js start --watch",
+    "start:prod": "node --env-file=.env dist/main.js",
+    "typecheck": "tsc --noEmit",
+    "lint": "oxlint --deny-warnings src test",
+    "format": "prettier --write src test *.json",
+    "test": "tsc -p tsconfig.test.json && node --env-file=.env --test .test-build/test/*.spec.js",
+    "typeorm": "node --env-file=.env node_modules/typeorm/cli.js -d dist/database/data-source.js",
+    "migration:generate": "npm run build && npm run typeorm -- migration:generate",
+    "migration:run": "npm run build && npm run typeorm -- migration:run",
+    "migration:revert": "npm run build && npm run typeorm -- migration:revert",
+    "migration:show": "npm run build && npm run typeorm -- migration:show"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "dependencies": {
+    "@nestjs/common": "^12.3.2",
+    "@nestjs/core": "^12.3.2",
+    "@nestjs/mapped-types": "^12.0.0",
+    "@nestjs/platform-express": "^12.3.2",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.15.1",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2",
+    "@nestjs/typeorm": "^12.0.2",
+    "typeorm": "^1.1.2",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "11.0.24",
+    "@nestjs/schematics": "^11.0.9",
+    "@types/express": "^5.0.0",
+    "@types/node": "^24.0.0",
+    "oxlint": "^1.58.0",
+    "prettier": "^3.4.2",
+    "typescript": "~5.9.3"
+  }
+}
