@@ -1,0 +1,75 @@
+@api = https://dummyjson.com
+@echo = https://httpbin.org
+
+### Get a product
+GET {{api}}/products/1
+Accept: application/json
+
+### Create a simulated product
+POST {{api}}/products/add
+Content-Type: application/json
+
+{"title":"Lavender Notebook","price":120}
+
+### Update a simulated product
+PUT {{api}}/products/1
+Content-Type: application/json
+
+{"title":"Lavender Notebook Updated"}
+
+### Delete a simulated product
+DELETE {{api}}/products/1
+
+### Query two users and select fields
+GET {{api}}/users?limit=2&select=firstName,email
+
+### Create a simulated post
+POST {{api}}/posts/add
+Content-Type: application/json
+
+{"title":"Practical work 1","userId":1}
+
+### Request headers without a response body
+HEAD {{api}}/products
+
+### Expected 404 response
+GET {{echo}}/status/404
+
+### Expected 500 response
+GET {{echo}}/status/500
+
+### Obtain a fresh public demo token
+# @name login
+POST {{api}}/auth/login
+Content-Type: application/json
+
+{"username":"emilys","password":"emilyspass"}
+
+### Authenticate with the token from the preceding request
+GET {{api}}/auth/me
+Authorization: Bearer {{login.response.body.$.accessToken}}
+
+### List products; use curl -w for the timing measurements
+GET {{api}}/products
+
+### Inspect HTTPS; use curl -v for TLS diagnostics
+GET {{api}}/products/1
+
+### Inspect HTTP redirection; disable automatic redirects to see the original status
+HEAD http://dummyjson.com/products/1
+
+### Set demo cookies; use curl -c to inspect the Netscape jar
+GET {{echo}}/cookies/set?user_role=student&session_key=lab1_token
+
+### Echo the cookies; use curl -b for the jar lifecycle experiment
+GET {{echo}}/cookies
+Cookie: session_key=lab1_token; user_role=student
+
+### Echo a Set-Cookie header with security attributes
+GET {{echo}}/response-headers?Set-Cookie=session_id%3Dxyz789%3B%20Path%3D%2F%3B%20Secure%3B%20HttpOnly%3B%20SameSite%3DStrict
+
+### Simulate a browser CORS preflight request
+OPTIONS {{echo}}/post
+Origin: https://my-college-app.edu
+Access-Control-Request-Method: POST
+Access-Control-Request-Headers: Content-Type, Authorization

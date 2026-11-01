@@ -1,0 +1,68 @@
+{
+  "info": {
+    "name": "Практична робота 1 CRUD",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET product",
+      "request": {
+        "method": "GET",
+        "url": "https://dummyjson.com/products/1",
+        "header": []
+      }
+    },
+    {
+      "name": "POST product",
+      "request": {
+        "method": "POST",
+        "url": "https://dummyjson.com/products/add",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Lavender Notebook\",\n  \"price\": 120\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "PUT product",
+      "request": {
+        "method": "PUT",
+        "url": "https://dummyjson.com/products/1",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Lavender Notebook Updated\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "DELETE product",
+      "request": {
+        "method": "DELETE",
+        "url": "https://dummyjson.com/products/1",
+        "header": []
+      }
+    }
+  ]
+}

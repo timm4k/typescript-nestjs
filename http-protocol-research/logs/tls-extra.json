@@ -1,0 +1,62 @@
+{
+  "protocol": "TLSv1.3",
+  "cipher": [
+    "TLS_AES_256_GCM_SHA384",
+    "TLSv1.3",
+    256
+  ],
+  "certificate": {
+    "subject": [
+      [
+        [
+          "commonName",
+          "dummyjson.com"
+        ]
+      ]
+    ],
+    "issuer": [
+      [
+        [
+          "countryName",
+          "US"
+        ]
+      ],
+      [
+        [
+          "organizationName",
+          "Google Trust Services"
+        ]
+      ],
+      [
+        [
+          "commonName",
+          "WE1"
+        ]
+      ]
+    ],
+    "version": 3,
+    "serialNumber": "70160B119FB9373D0EF2F4D65C555080",
+    "notBefore": "Oct  6 18:02:33 2026 GMT",
+    "notAfter": "Jan  4 19:01:08 2027 GMT",
+    "subjectAltName": [
+      [
+        "DNS",
+        "dummyjson.com"
+      ],
+      [
+        "DNS",
+        "*.dummyjson.com"
+      ]
+    ],
+    "caIssuers": [
+      "http://i.pki.goog/we1.crt"
+    ],
+    "crlDistributionPoints": [
+      "http://c.pki.goog/we1/UeHCJDekx8M.crl"
+    ]
+  },
+  "peer": [
+    "172.67.205.42",
+    443
+  ]
+}

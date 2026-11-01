@@ -1,0 +1,141 @@
+* Host dummyjson.com:443 was resolved.
+* IPv6: (none)
+* IPv4: 172.67.205.42, 104.21.61.23
+*   Trying 172.67.205.42:443...
+* schannel: disabled automatic use of client certificate
+* ALPN: curl offers http/1.1
+* ALPN: server accepted http/1.1
+*    Subject: CN=dummyjson.com
+*    Issuer: C=US, O=Google Trust Services, CN=WE1
+*    Version: 2
+*    Serial Number: 70:16:0b:11:9f:b9:37:3d:0e:f2:f4:d6:5c:55:50:80:
+*    Signature Algorithm: ecdsa-with-SHA256
+*    Start Date: 2026-10-06 18:02:33 GMT
+*    Expire Date: 2027-01-04 19:01:08 GMT
+*    Public Key Algorithm: ecPublicKey
+*    ECC Public Key (256 bits)
+*    ecPublicKey: 04:3e:33:bb:f7:36:7c:8a:a7:e8:15:07:c4:4b:d5:be:26:4c:44:e5:ca:65:a3:a0:b2:9a:ea:a0:bf:3f:ac:be:68:12:fe:04:fc:9d:9e:39:93:8a:ef:5a:e6:5f:8e:fb:48:7a:dc:00:cd:77:a8:98:44:c3:e1:c5:65:fc:7c:07:df:
+*    Signature: 30:45:02:20:68:48:30:b4:26:fc:17:e4:be:14:19:5a:2e:f4:8f:d5:c7:cc:54:9b:62:82:09:59:19:79:da:28:1c:85:fa:34:02:21:00:aa:5c:c2:68:29:c2:57:ae:db:bb:9f:65:cb:9d:3e:c9:86:4f:19:af:01:c2:6b:76:bf:f6:4e:fa:a7:8e:ae:70:
+*    Cert: -----BEGIN CERTIFICATE-----
+MIIDijCCAzCgAwIBAgIQcBYLEZ+5Nz0O8vTWXFVQgDAKBggqhkjOPQQDAjA7MQsw
+CQYDVQQGEwJVUzEeMBwGA1UEChMVR29vZ2xlIFRydXN0IFNlcnZpY2VzMQwwCgYD
+VQQDEwNXRTEwHhcNMjYxMDA2MTgwMjMzWhcNMjcwMTA0MTkwMTA4WjAYMRYwFAYD
+VQQDEw1kdW1teWpzb24uY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEPjO7
+9zZ8iqfoFQfES9W+JkxE5cplo6Cymuqgvz+svmgS/gT8nZ45k4rvWuZfjvtIetwA
+zXeomETD4cVl/HwH36OCAjcwggIzMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAK
+BggrBgEFBQcDATAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBSxW5jCEIVYLb3rofJX
+BIWr08FWtDAfBgNVHSMEGDAWgBSQd5I1Z8T/qMyp5nvZgHl7zJP5ODA1BggrBgEF
+BQcBAQQpMCcwJQYIKwYBBQUHMAKGGWh0dHA6Ly9pLnBraS5nb29nL3dlMS5jcnQw
+KQYDVR0RBCIwIIINZHVtbXlqc29uLmNvbYIPKi5kdW1teWpzb24uY29tMBMGA1Ud
+IAQMMAowCAYGZ4EMAQIBMDYGA1UdHwQvMC0wK6ApoCeGJWh0dHA6Ly9jLnBraS5n
+b29nL3dlMS9VZUhDSkRla3g4TS5jcmwwggENBgorBgEEAdZ5AgQCBIH+BIH7APkA
+dwBEwr0M6RQOZKXJSgGTClqhuzWXDgDuERaJaCocRNe1ZgAAAaESmJ2XAAAEAwBI
+MEYCIQDQUgMITmBYKjqw646o6HMVAAn9yuaVyYlfqI3nOovq8wIhALgAf0eQoXX9
+mMKc9YIUXwjX/fQdeoI6xE1GdoOtjxL1AH4AWW5sM4aUsllyolbIoOjdkEp26Ag9
+2oc7AQg4KBQ87lkAAAGhEpigcgAIAAAFAAh4rvQEAwBHMEUCIQC7lqLjn6af2aSU
+nbx6FenWBQf4Xddufjm+ZFwdN1+JWwIgcFq/u681++nSkBwduVCZe8u2M+B/Nm9K
+rKdeELTiRXwwCgYIKoZIzj0EAwIDSAAwRQIgaEgwtCb8F+S+FBlaLvSP1cfMVJti
+gglZGXnaKByF+jQCIQCqXMJoKcJXrtu7n2XLnT7Jhk8ZrwHCa3a/9k76p46ucA==
+-----END CERTIFICATE-----
+
+* Established connection to dummyjson.com (172.67.205.42 port 443) from [REDACTED_LOCAL_IP] port 57800
+* using HTTP/1.x
+> GET /products/1 HTTP/1.1
+
+> Host: dummyjson.com
+
+> User-Agent: curl/8.21.0
+
+> Accept: */*
+
+>
+
+* Request completely sent off
+* schannel: remote party requests renegotiation
+* schannel: renegotiating SSL/TLS connection
+*    Subject: CN=dummyjson.com
+*    Issuer: C=US, O=Google Trust Services, CN=WE1
+*    Version: 2
+*    Serial Number: 70:16:0b:11:9f:b9:37:3d:0e:f2:f4:d6:5c:55:50:80:
+*    Signature Algorithm: ecdsa-with-SHA256
+*    Start Date: 2026-10-06 18:02:33 GMT
+*    Expire Date: 2027-01-04 19:01:08 GMT
+*    Public Key Algorithm: ecPublicKey
+*    ECC Public Key (256 bits)
+*    ecPublicKey: 04:3e:33:bb:f7:36:7c:8a:a7:e8:15:07:c4:4b:d5:be:26:4c:44:e5:ca:65:a3:a0:b2:9a:ea:a0:bf:3f:ac:be:68:12:fe:04:fc:9d:9e:39:93:8a:ef:5a:e6:5f:8e:fb:48:7a:dc:00:cd:77:a8:98:44:c3:e1:c5:65:fc:7c:07:df:
+*    Signature: 30:45:02:20:68:48:30:b4:26:fc:17:e4:be:14:19:5a:2e:f4:8f:d5:c7:cc:54:9b:62:82:09:59:19:79:da:28:1c:85:fa:34:02:21:00:aa:5c:c2:68:29:c2:57:ae:db:bb:9f:65:cb:9d:3e:c9:86:4f:19:af:01:c2:6b:76:bf:f6:4e:fa:a7:8e:ae:70:
+*    Cert: -----BEGIN CERTIFICATE-----
+MIIDijCCAzCgAwIBAgIQcBYLEZ+5Nz0O8vTWXFVQgDAKBggqhkjOPQQDAjA7MQsw
+CQYDVQQGEwJVUzEeMBwGA1UEChMVR29vZ2xlIFRydXN0IFNlcnZpY2VzMQwwCgYD
+VQQDEwNXRTEwHhcNMjYxMDA2MTgwMjMzWhcNMjcwMTA0MTkwMTA4WjAYMRYwFAYD
+VQQDEw1kdW1teWpzb24uY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEPjO7
+9zZ8iqfoFQfES9W+JkxE5cplo6Cymuqgvz+svmgS/gT8nZ45k4rvWuZfjvtIetwA
+zXeomETD4cVl/HwH36OCAjcwggIzMA4GA1UdDwEB/wQEAwIHgDATBgNVHSUEDDAK
+BggrBgEFBQcDATAMBgNVHRMBAf8EAjAAMB0GA1UdDgQWBBSxW5jCEIVYLb3rofJX
+BIWr08FWtDAfBgNVHSMEGDAWgBSQd5I1Z8T/qMyp5nvZgHl7zJP5ODA1BggrBgEF
+BQcBAQQpMCcwJQYIKwYBBQUHMAKGGWh0dHA6Ly9pLnBraS5nb29nL3dlMS5jcnQw
+KQYDVR0RBCIwIIINZHVtbXlqc29uLmNvbYIPKi5kdW1teWpzb24uY29tMBMGA1Ud
+IAQMMAowCAYGZ4EMAQIBMDYGA1UdHwQvMC0wK6ApoCeGJWh0dHA6Ly9jLnBraS5n
+b29nL3dlMS9VZUhDSkRla3g4TS5jcmwwggENBgorBgEEAdZ5AgQCBIH+BIH7APkA
+dwBEwr0M6RQOZKXJSgGTClqhuzWXDgDuERaJaCocRNe1ZgAAAaESmJ2XAAAEAwBI
+MEYCIQDQUgMITmBYKjqw646o6HMVAAn9yuaVyYlfqI3nOovq8wIhALgAf0eQoXX9
+mMKc9YIUXwjX/fQdeoI6xE1GdoOtjxL1AH4AWW5sM4aUsllyolbIoOjdkEp26Ag9
+2oc7AQg4KBQ87lkAAAGhEpigcgAIAAAFAAh4rvQEAwBHMEUCIQC7lqLjn6af2aSU
+nbx6FenWBQf4Xddufjm+ZFwdN1+JWwIgcFq/u681++nSkBwduVCZe8u2M+B/Nm9K
+rKdeELTiRXwwCgYIKoZIzj0EAwIDSAAwRQIgaEgwtCb8F+S+FBlaLvSP1cfMVJti
+gglZGXnaKByF+jQCIQCqXMJoKcJXrtu7n2XLnT7Jhk8ZrwHCa3a/9k76p46ucA==
+-----END CERTIFICATE-----
+
+* schannel: SSL/TLS connection renegotiated
+< HTTP/1.1 200 OK
+
+< Date: Sun, 11 Oct 2026 13:41:00 GMT
+
+< Content-Type: application/json; charset=utf-8
+
+< Transfer-Encoding: chunked
+
+< Connection: keep-alive
+
+< access-control-allow-credentials: true
+
+< Nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+
+< etag: W/"5e6-LuZgXJ6APIKHswyRKC9GQ6dxUNE"
+
+< strict-transport-security: max-age=15552000; includeSubDomains
+
+< vary: Origin, Accept-Encoding
+
+< x-content-type-options: nosniff
+
+< x-dns-prefetch-control: off
+
+< x-download-options: noopen
+
+< x-frame-options: SAMEORIGIN
+
+< x-ratelimit-limit: 100
+
+< x-ratelimit-remaining: 99
+
+< x-ratelimit-reset: 1791497604
+
+< x-xss-protection: 1; mode=block
+
+< Age: 228463
+
+< Cache-Control: no-store
+
+< cf-cache-status: HIT
+
+< Report-To: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=1Jc0NpgS%2FrzbMzlonAbJmamC6b0fPQ1oQJSSa8WudNNewiBEXAKBX6lzybmHeN%2BTiVMLEtttfmT3MC4VYmpWKF69XFSZyvQQdkzqNGKQsS8JwVVaMafVfZ56MebFZNqX"}]}
+
+< Server: cloudflare
+
+< CF-RAY: a48e47a8ca905b43-VIE
+
+<
+
+{ [377 bytes data]
+* Connection #0 to host dummyjson.com:443 left intact

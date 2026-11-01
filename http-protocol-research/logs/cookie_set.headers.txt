@@ -1,0 +1,20 @@
+HTTP/1.1 302 FOUND
+Date: Sun, 11 Oct 2026 13:41:01 GMT
+Content-Type: text/html; charset=utf-8
+Content-Length: 223
+Connection: keep-alive
+Server: gunicorn/19.9.0
+Location: /cookies
+Set-Cookie: user_role=student; Path=/
+Set-Cookie: session_key=lab1_token; Path=/
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true
+
+HTTP/1.1 200 OK
+Date: Sun, 11 Oct 2026 13:41:01 GMT
+Content-Type: application/json
+Content-Length: 84
+Connection: keep-alive
+Server: gunicorn/19.9.0
+Access-Control-Allow-Origin: *
+Access-Control-Allow-Credentials: true

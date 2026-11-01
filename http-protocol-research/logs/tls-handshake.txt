@@ -1,0 +1,38 @@
+OpenSSL 3.2.1; separate verified TLS 1.3 connection; 2026-11-01
+Host: dummyjson.com:443
+Certificate chain and hostname verification: enabled
+Filtered transcript: handshake message labels and verification results; byte dumps and session tickets omitted
+
+SSL_connect:before SSL initialization
+>>> TLS 1.3, Handshake [length 00f2], ClientHello
+SSL_connect:SSLv3/TLS write client hello
+SSL_connect:SSLv3/TLS write client hello
+<<< TLS 1.3, Handshake [length 007a], ServerHello
+SSL_connect:SSLv3/TLS read server hello
+<<< TLS 1.3, Handshake [length 000a], EncryptedExtensions
+SSL_connect:TLSv1.3 read encrypted extensions
+<<< TLS 1.3, Handshake [length 09c6], Certificate
+SSL_connect:SSLv3/TLS read server certificate
+<<< TLS 1.3, Handshake [length 004e], CertificateVerify
+SSL_connect:TLSv1.3 read server certificate verify
+<<< TLS 1.3, Handshake [length 0034], Finished
+SSL_connect:SSLv3/TLS read finished
+SSL_connect:SSLv3/TLS write change cipher spec
+>>> TLS 1.3, Handshake [length 0034], Finished
+SSL_connect:SSLv3/TLS write finished
+CONNECTION ESTABLISHED
+Protocol version: TLSv1.3
+Ciphersuite: TLS_AES_256_GCM_SHA384
+Peer certificate: CN=dummyjson.com
+Hash used: SHA256
+Signature type: ECDSA
+Verification: OK
+Verified peername: dummyjson.com
+Server Temp Key: X25519, 253 bits
+SSL_connect:SSL negotiation finished successfully
+SSL_connect:SSL negotiation finished successfully
+SSL_connect:SSLv3/TLS read server session ticket
+SSL_connect:SSL negotiation finished successfully
+SSL_connect:SSL negotiation finished successfully
+SSL_connect:SSLv3/TLS read server session ticket
+HTTP/1.1 200 OK
